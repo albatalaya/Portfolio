@@ -1,0 +1,282 @@
+* {
+  scroll-behavior: smooth;
+}
+body {
+  margin-top: 0;
+  background-color: #233142;
+  font-family: "Roboto";
+}
+/*.languages {
+  font-family: "Cutive Mono", "Courier New", Courier, monospace, sans-serif;
+  font-size: 12px;
+  position: fixed;
+  color: white;
+  margin: 8px;
+  line-height: 1.5em;
+  z-index: 2;
+}*/
+#flag {
+  background-color: #74a2dc;
+  height: 20vh;
+  width: 5vw;
+  margin-left: 15%;
+  display: inline-block;
+  position: sticky;
+  top: -15vh;
+  margin-top: 0px;
+  z-index: 2;
+}
+#flag img {
+  width: 4.5vw;
+  padding: 0.25vw;
+  height: auto;
+  background-color: #74a2dc;
+  margin-top: 15vh;
+  color: white;
+  z-index: 2;
+}
+
+.tags {
+  font-family: "Cutive Mono", "Courier New", Courier, monospace, sans-serif;
+  font-size: 16px;
+
+  position: fixed;
+  margin: 30px auto auto 48vw;
+  z-index: 2;
+}
+.navigate {
+  margin-right: 5px;
+  color: white;
+  text-decoration: none;
+  transition: all ease-in;
+}
+
+.navigate:focus {
+  color: #74a2dc;
+}
+
+.navigate:hover {
+  text-decoration: underline;
+}
+
+.name {
+  height: 50vh;
+  background-color: #233142;
+  margin: 0;
+  padding: 0;
+}
+
+#name {
+  font-family: "Major Mono Display Regular", Helvetica, Arial, sans-serif;
+  font-size: 72px;
+  font-weight: 100;
+  text-align: center;
+  color: white;
+  margin-top: 10%;
+}
+
+nav {
+  position: fixed;
+  right: 0;
+  top: 53%;
+  transform: translateY(-50%);
+  z-index: 5;
+
+  --nav-gap: 15px;
+  padding: 15px;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: block;
+  margin: 15px;
+  transition: transform 0.1s;
+  z-index: 1;
+}
+
+.dot-img {
+  width: 15px;
+  position: absolute;
+  background-color: #233142;
+  border-radius: 50%;
+  transition: transform 0.1s;
+}
+
+.bubble img {
+  margin: 20px auto 20px 15px;
+  position: fixed;
+  width: 40px;
+  height: auto;
+  z-index: 2;
+}
+/*todo bubbletag*/
+.bubbletag {
+  visibility: hidden;
+  width: 50px;
+  font-size: 10px;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 2px 1px;
+  margin-top: 32px;
+  margin-left: 60px;
+  position: fixed;
+  background-color: #233142a2;
+  z-index: 10;
+}
+.bubble:hover .bubbletag {
+  visibility: visible;
+}
+
+.header {
+  height: 10vh;
+  background-color: #233142;
+  /*margin-top: 20%;*/
+  position: sticky;
+  top: 0px;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+.AboutMe {
+  background-color: white;
+}
+
+.about-flex {
+  display: flex;
+  align-items: center;
+}
+
+.AboutMe span {
+  font-family: "Major Mono Display Regular", Helvetica, Arial, sans-serif;
+  font-size: 72px;
+  font-weight: 100;
+  text-shadow: 1px 1px 4px gray;
+  margin-left: -10px;
+}
+
+.AboutMe p {
+  font-family: "Roboto";
+  font-size: 20px;
+  margin: 0 auto 0 12vw;
+}
+.AboutMe img {
+  width: 25vw;
+  height: auto;
+  float: right;
+  margin: 25vh 12vw 30px 5vw;
+}
+
+.darktriangle1 {
+  width: 0;
+  height: 0;
+  border-top: 25vh solid rgb(255, 255, 255);
+  border-right: 98vw solid #233142;
+}
+.lighttriangle1 {
+  margin-top: -130px;
+  width: 0;
+  height: 0;
+  border-top: 25vh solid transparent;
+  border-right: 97.85vw solid #f5f5f5;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.grey {
+  background-color: #f5f5f5;
+}
+
+h2 {
+  margin-top: 0;
+  font-family: "Major Mono Display Regular", Helvetica, Arial, sans-serif;
+  font-size: 72px;
+  font-weight: 100;
+  text-shadow: 1px 1px 4px gray;
+  padding-top: 15vh;
+  margin-left: 11.5vw;
+}
+
+.project {
+  margin: auto 12vw auto 12vw;
+}
+
+h3 {
+  font-family: "Cutive Mono", "Courier New", Courier, monospace, sans-serif;
+  font-size: 30px;
+  font-weight: 100;
+}
+p {
+  font-family: "Roboto";
+  font-size: 20px;
+}
+
+.technologies {
+  display: flex;
+  align-items: flex-start;
+}
+
+.icon {
+  margin-right: 30px;
+}
+.icontag {
+  visibility: hidden;
+  width: 50px;
+  font-size: 10px;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 2px 1px;
+  margin-top: 23px;
+  margin-left: -56px;
+  position: absolute;
+  background-color: #233142a2;
+}
+
+.icon:hover .icontag {
+  visibility: visible;
+}
+iframe {
+  margin: 5vh auto 10vh auto;
+  display: block;
+}
+
+.darktriangle2 {
+  margin-top: 100px;
+  width: 0;
+  height: 0;
+  border-top: 25vh solid #f5f5f5;
+  border-left: 97.85vw solid #233142;
+}
+.lighttriangle2 {
+  margin-top: -130px;
+  width: 0;
+  height: 0;
+  border-top: 25vh solid transparent;
+  border-left: 97.85vw solid white;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.Contact {
+  background-color: transparent;
+  height: 70vh;
+}
+
+.white {
+  background-color: white;
+}
+
+.Contact .info {
+  margin: auto 13vw auto 15vw;
+}
+
+.Contact a {
+  margin: 25px auto 0px 30px;
+  position: absolute;
+  font-size: 20px;
+  color: #3d628f;
+}
