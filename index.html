@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="assets/favicon.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Major+Mono+Display">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alba Talaya Vidal</title>
   </head>
@@ -13,21 +16,34 @@
     <link rel="stylesheet" href="./style.css" />
     <!--<script type="application/json" src="data.json"></script>-->
 <!--todo:languages-->
+
+    <div class="burger-tags" id="burger-tags">
+      <a href="#AboutMe" class="navigate" id="Burger-AboutMe" style="margin-top:20vh;"> &ltAbout me></a> 
+      <a href="#MyProjects" class="navigate" id="Burger-MyProjects"> &ltMy projects></a>  
+      <a href="#Contact" class="navigate" id="Burger-Contact"> &ltContact></a> 
+      <a class="navigate" href="./assets/CV_English.pdf" style="margin-bottom:20vh;"> &ltCV></a> 
+    </div>
+
     <div id="flag"><a href="#Portfolio"><img src="./assets/logo.png" /></a></div>
     <!--<div class="languages">
       <a>&ltEnglish></a> <br />
       <a>&ltEspañol></a> <br />
       <a>&ltCatalà></a>
     </div>-->
-<!--todo: fonts-->
+    
     <span class="tags">
-      
         <a href="#AboutMe" class="navigate" id="Nav-AboutMe"> &ltAbout me></a>
         <a href="#MyProjects" class="navigate" id="Nav-MyProjects"> &ltMy projects></a>
         <a href="#Contact" class="navigate" id="Nav-Contact"> &ltContact></a>
         <a class="navigate" href="./assets/CV_English.pdf"> &ltCV></a>
-      
     </span>
+    <a class="burger-menu" id="burger-menu">
+      <img src="./assets/menu.png" style="z-index:2;">
+      <img id="Back" src="./assets/back.png">
+    </a>
+    
+
+
   <!--todo: night mode-->
 
 
@@ -36,7 +52,7 @@
 
     <section class="name" id="Home">
       <h1 id="name">Alba talaya Vidal</h1>
-      <div class="bubbles" style="margin-top: 20vh">
+      <div class="bubbles" >
         <a class="bubble" href="mailto:talayaalba@gmail.com" ><img src="./assets/email.png"><span class="bubbletag" style="width:auto; padding:2px;">Mail</span></a> <br>
         <a class="bubble" href="https://www.linkedin.com/in/albatalaya/"><img src="./assets/linkedin.png" style="margin-top:50px"><span class="bubbletag" style="width:auto; padding:2px;margin-top:65px;">LinkedIn</span></a>
         <a class="bubble" href="https://github.com/albatalaya"><img src="./assets/github-bubble.png" style="margin-top:100px"><span class="bubbletag" style="width:auto; padding:2px; margin-top:115px;">GitHub</span></a>
@@ -87,7 +103,7 @@
           MOTORIZED VEHICLES CLOSING FROM BEHIND USING THE SMARTPHONE'S
           MICROPHONE: 
           <a class="icon" href="./assets/thesis.pdf">
-            <img src="./assets/link.png" width="20px" style="position:absolute; margin-left:10px; margin-top:5px;"/>
+            <img class="openWeb" src="./assets/link.png" width="20px" style="position:absolute; margin-left:10px; margin-top:5px;"/>
             <span class="icontag" style="width:auto; margin-top:30px; margin-left:-10px; padding:2px;">Open PDF</span>
           </a> 
           <a class="icon" href="https://github.com/albatalaya/BachelorThesis-Frontend">
@@ -104,42 +120,42 @@
         <p>Technologies I used:</p>
         <div class="technologies">
           <span class="icon">
-            <img src="./assets/vscode.png" width="60px" />
+            <img src="./assets/vscode.png" />
             <span class="icontag">VSCode</span>
           </span>
           <span class="icon">
-            <img src="./assets/angular.png" width="60px" />
+            <img src="./assets/angular.png" />
             <span class="icontag">Angular</span>
           </span>
           <span class="icon">
-            <img src="./assets/ionic.png" width="60px" />
+            <img src="./assets/ionic.png" />
             <span class="icontag">Ionic</span>
           </span>
           <span class="icon">
-            <img src="./assets/python.png" width="60px" />
+            <img src="./assets/python.png" />
             <span class="icontag">Python</span>
           </span>
           <span class="icon">
-            <img src="./assets/matlab.png" width="60px" />
+            <img src="./assets/matlab.png" />
             <span class="icontag">MatLab</span>
           </span>
           <span class="icon">
-            <img src="./assets/github.png" width="60px" />
+            <img src="./assets/github.png" />
             <span class="icontag">GitHub</span>
           </span>
           <span class="icon">
-            <img src="./assets/xd.png" width="60px" />
+            <img src="./assets/xd.png" />
             <span class="icontag">Adobe XD</span>
           </span>
           <span class="icon">
-            <img src="./assets/photoshop.png" width="60px" />
-            <span class="icontag" style="margin-top: 14px"
+            <img src="./assets/photoshop.png" />
+            <span class="icontag double" style="margin-top: 14px"
               >Adobe Photoshop</span
             >
           </span>
           <span class="icon">
-            <img src="./assets/premiere.png" width="60px" />
-            <span class="icontag" style="margin-top: 10px;"">Adobe Premiere Pro</span>
+            <img src="./assets/premiere.png"/>
+            <span class="icontag double" style="margin-top: 10px;">Adobe Premiere Pro</span>
           </span>
         </div>
         <iframe
@@ -171,34 +187,34 @@ of 5 students.
         <p>Technologies I used:</p>
         <div class="technologies">
           <span class="icon">
-            <img src="./assets/vscode.png" width="60px" />
+            <img src="./assets/vscode.png" />
             <span class="icontag">VSCode</span>
           </span>
           <span class="icon">
-            <img src="./assets/angular.png" width="60px" />
+            <img src="./assets/angular.png" />
             <span class="icontag">Angular</span>
           </span>
           <span class="icon">
-            <img src="./assets/ionic.png" width="60px" />
+            <img src="./assets/ionic.png" />
             <span class="icontag">Ionic</span>
           </span>
           <span class="icon">
-            <img src="./assets/github.png" width="60px" />
+            <img src="./assets/github.png" />
             <span class="icontag">GitHub</span>
           </span>
           <span class="icon">
-            <img src="./assets/xd.png" width="60px" />
+            <img src="./assets/xd.png"/>
             <span class="icontag">Adobe XD</span>
           </span>
           <span class="icon">
-            <img src="./assets/photoshop.png" width="60px" />
-            <span class="icontag" style="margin-top: 14px"
+            <img src="./assets/photoshop.png"/>
+            <span class="icontag double" style="margin-top: 14px"
               >Adobe Photoshop</span
             >
           </span>
           <span class="icon">
-            <img src="./assets/premiere.png" width="60px" />
-            <span class="icontag" style="margin-top: 10px;"">Adobe Premiere Pro</span>
+            <img src="./assets/premiere.png" />
+            <span class="icontag double" style="margin-top: 10px;">Adobe Premiere Pro</span>
           </span>
         </div>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/RrfiOulhY-E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -212,7 +228,7 @@ of 5 students.
           03. RESUME: 
           <!--todo: change language-->
         <a class="icon" href="./assets/CV_English.pdf">
-          <img src="./assets/link.png" width="20px" style="position:absolute; margin-left:10px; margin-top:5px;"/>
+          <img class="openWeb" src="./assets/link.png" width="20px" style="position:absolute; margin-left:10px; margin-top:5px;"/>
           <span class="icontag" style="width:auto; margin-top:30px; margin-left:-10px; padding:2px;">Open PDF</span>
         </a> 
         <a class="icon" href="https://github.com/albatalaya/MyResume">
@@ -228,7 +244,7 @@ of 5 students.
           </span>
           <span class="icon">
             <img src="./assets/latex.png" style="margin-top: 20px" width="80px" />
-            <span class="icontag" style="margin-top: 25px; margin-left:-65px">LaTex</span>
+            <span class="icontag" id="latextag" style="margin-top: 25px; margin-left:-65px">LaTex</span>
           </span>
           <span class="icon">
             <img src="./assets/github.png" width="60px" />
@@ -236,7 +252,7 @@ of 5 students.
           </span>
           <span class="icon">
             <img src="./assets/photoshop.png" width="60px" />
-            <span class="icontag" style="margin-top: 14px"
+            <span class="icontag double" style="margin-top: 14px"
               >Adobe Photoshop</span
             >
           </span>
@@ -250,7 +266,7 @@ of 5 students.
           04. PERSONAL PORTFOLIO: 
         <!--todo: redirect-->
         <a class="icon" href="./assets/thesis.pdf">
-          <img src="./assets/link.png" width="20px" style="position:absolute; margin-left:10px; margin-top:5px;"/>
+          <img class="openWeb" src="./assets/link.png" width="20px" style="position:absolute; margin-left:10px; margin-top:5px;"/>
           <span class="icontag" style="width:auto; margin-top:30px; margin-left:-10px; padding:2px;">Open WebPage</span>
         </a> 
         <a class="icon" href="https://github.com/albatalaya/BachelorThesis-Frontend">
@@ -270,21 +286,21 @@ of 5 students.
           </span>
           <span class="icon">
             <img src="./assets/js.png" width="60px" />
-            <span class="icontag" style="margin-top: 14px;">Vanilla JavaScript</span>
+            <span class="icontag double" style="margin-top: 14px;">Vanilla JavaScript</span>
           </span>
           <span class="icon">
             <img src="./assets/github.png" width="60px" />
             <span class="icontag">GitHub</span>
           </span>
           <span class="icon">
-            <img src="./assets/figma.svg" width="40px"/>
-            <span class="icontag" style="margin-top: 14px; margin-left: -45px;"
+            <img id="figma" src="./assets/figma.svg" width="40px"/>
+            <span class="icontag" id="figmatag" style="margin-top: 14px; margin-left: -45px;"
               >Figma</span
             >
           </span>
           <span class="icon">
             <img src="./assets/photoshop.png" width="60px" />
-            <span class="icontag" style="margin-top: 14px"
+            <span class="icontag double" style="margin-top: 14px"
               >Adobe Photoshop</span
             >
           </span>

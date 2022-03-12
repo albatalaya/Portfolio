@@ -1,12 +1,6 @@
-//import './style.css'
-/*import data from './data.json';
-
-
-
-let info=data;
-console.log(info.name);*/ 
 
 let currentTab;
+let visible=false;
 
 function activateNavigation() {
     const sections = document.querySelectorAll("section");
@@ -66,6 +60,7 @@ function activateNavigation() {
     document.getElementById("Dot-AboutMe").style.backgroundColor= "transparent";
   }
 
+  //bug projects not working
   document.getElementById("Dot-MyProjects").onmouseover= function(){
     document.getElementById("Dot-MyProjects").style.backgroundColor= "transparent";
   }
@@ -101,17 +96,31 @@ function activateNavigation() {
 
 
   function color(id){
+    //bug burger menu hide when clicked on current section
+    hideMenu();
     uncolor();
     let current= "Nav-".concat(id);
    document.getElementById(current).style.color="#74a2dc";
+
+   let current2= "Burger-".concat(id);
+   document.getElementById(current2).style.color="#74a2dc";
   }
 
   function uncolor(){
+
    document.getElementById("Nav-AboutMe").style.color="white";
    
    document.getElementById("Nav-MyProjects").style.color="white";
    
    document.getElementById("Nav-Contact").style.color="white";
+
+   document.getElementById("Burger-AboutMe").style.color="white";
+   
+   document.getElementById("Burger-MyProjects").style.color="white";
+   
+   document.getElementById("Burger-Contact").style.color="white";
+   hideMenu();
+
   }
 
   function selectedDot(id){
@@ -132,3 +141,32 @@ function activateNavigation() {
     document.getElementById("Dot-Contact").style.transform= "scale(1)";
     document.getElementById("Dot-Contact").style.backgroundColor= "#233142";
   }
+
+  function showMenu(){
+    visible=true;
+    document.getElementById("burger-tags").style.visibility="visible";
+    document.getElementById("Back").style.visibility="visible";
+
+    var body = document.getElementById("Portfolio");
+    body.classList.add("body-background");
+  }
+
+  function hideMenu(){
+    visible=false;
+    document.getElementById("burger-tags").style.visibility="hidden";
+    document.getElementById("Back").style.visibility="hidden";
+
+    var body = document.getElementById("Portfolio");
+    body.classList.remove("body-background");
+  }
+
+  function menu(){
+    if(visible){
+      hideMenu();
+    }else{
+      showMenu();
+    }
+  }
+
+  document.getElementById("burger-menu").addEventListener("click", menu);
+

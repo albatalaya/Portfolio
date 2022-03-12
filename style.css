@@ -4,7 +4,7 @@
 body {
   margin-top: 0;
   background-color: #233142;
-  font-family: "Roboto";
+  font-family: "Roboto", "Arial", sans;
 }
 /*.languages {
   font-family: "Cutive Mono", "Courier New", Courier, monospace, sans-serif;
@@ -19,6 +19,7 @@ body {
   background-color: #74a2dc;
   height: 20vh;
   width: 5vw;
+  min-width: 50px;
   margin-left: 15%;
   display: inline-block;
   position: sticky;
@@ -27,8 +28,8 @@ body {
   z-index: 2;
 }
 #flag img {
-  width: 4.5vw;
-  padding: 0.25vw;
+  width: 5vw;
+  min-width: 50px;
   height: auto;
   background-color: #74a2dc;
   margin-top: 15vh;
@@ -39,11 +40,44 @@ body {
 .tags {
   font-family: "Cutive Mono", "Courier New", Courier, monospace, sans-serif;
   font-size: 16px;
-
   position: fixed;
-  margin: 30px auto auto 48vw;
+  top: 1.5vw;
+  right: 4%;
   z-index: 2;
 }
+
+.burger-menu img {
+  top: 2vw;
+  right: 4%;
+  width: 20px;
+  visibility: hidden;
+  position: fixed;
+  z-index: 4;
+}
+.burger-tags {
+  transition: all ease-in;
+  visibility: hidden;
+  font-family: "Cutive Mono", "Courier New", Courier, monospace, sans-serif;
+  font-size: 16px;
+  position: fixed;
+
+  background-color: rgba(35, 49, 66, 0.9);
+  height: 100vh;
+  width: 100vw;
+  z-index: 3;
+  backdrop-filter: blur(5px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: space-around;
+}
+
+.body-background {
+  overflow: hidden;
+}
+
 .navigate {
   margin-right: 5px;
   color: white;
@@ -60,19 +94,20 @@ body {
 }
 
 .name {
-  height: 50vh;
+  height: calc(70vh - 5vw);
   background-color: #233142;
   margin: 0;
   padding: 0;
 }
 
 #name {
-  font-family: "Major Mono Display Regular", Helvetica, Arial, sans-serif;
+  font-family: "Major Mono Display", Helvetica, Arial, sans-serif;
   font-size: 72px;
   font-weight: 100;
   text-align: center;
   color: white;
-  margin-top: 10%;
+  margin: 10% 30px auto 30px;
+  z-index: 100;
 }
 
 nav {
@@ -81,9 +116,8 @@ nav {
   top: 53%;
   transform: translateY(-50%);
   z-index: 5;
-
   --nav-gap: 15px;
-  padding: 15px;
+  margin-right: 20px;
 }
 
 .dot {
@@ -104,14 +138,22 @@ nav {
   transition: transform 0.1s;
 }
 
+.bubbles {
+  /*margin-top: calc(10vw- 40px);*/
+  bottom: 160px;
+  /*left: 4%;*/
+  position: fixed;
+  z-index: 2;
+}
+
 .bubble img {
-  margin: 20px auto 20px 15px;
+  margin: 20px auto 0px 5px;
   position: fixed;
   width: 40px;
   height: auto;
   z-index: 2;
 }
-/*todo bubbletag*/
+
 .bubbletag {
   visibility: hidden;
   width: 50px;
@@ -131,9 +173,10 @@ nav {
 }
 
 .header {
-  height: 10vh;
+  height: 5vw;
+  margin-right: 1px;
+  min-height: 50px;
   background-color: #233142;
-  /*margin-top: 20%;*/
   position: sticky;
   top: 0px;
   margin: 0;
@@ -147,11 +190,13 @@ nav {
 
 .about-flex {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  padding: 12vw;
 }
 
 .AboutMe span {
-  font-family: "Major Mono Display Regular", Helvetica, Arial, sans-serif;
+  font-family: "Major Mono Display", Helvetica, Arial, sans-serif;
   font-size: 72px;
   font-weight: 100;
   text-shadow: 1px 1px 4px gray;
@@ -159,29 +204,39 @@ nav {
 }
 
 .AboutMe p {
-  font-family: "Roboto";
   font-size: 20px;
-  margin: 0 auto 0 12vw;
+  padding-right: 3vw;
+  width: 46vw;
 }
 .AboutMe img {
-  width: 25vw;
+  width: 23vw;
   height: auto;
   float: right;
-  margin: 25vh 12vw 30px 5vw;
+}
+
+@media only screen and (max-width: 1150px) {
+  .AboutMe p {
+    width: 100%;
+  }
+  .AboutMe img {
+    margin-right: auto;
+    margin-left: auto;
+    width: 40vw;
+  }
 }
 
 .darktriangle1 {
   width: 0;
   height: 0;
-  border-top: 25vh solid rgb(255, 255, 255);
-  border-right: 98vw solid #233142;
+  border-top: 15vw solid white;
+  border-right: calc(100vw - 33px) solid #233142;
 }
 .lighttriangle1 {
-  margin-top: -130px;
+  margin-top: -10vw;
   width: 0;
   height: 0;
-  border-top: 25vh solid transparent;
-  border-right: 97.85vw solid #f5f5f5;
+  border-top: 15vw solid transparent;
+  border-right: calc(100vw - 33px) solid #f5f5f5;
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -192,7 +247,7 @@ nav {
 
 h2 {
   margin-top: 0;
-  font-family: "Major Mono Display Regular", Helvetica, Arial, sans-serif;
+  font-family: "Major Mono Display", Helvetica, Arial, sans-serif;
   font-size: 72px;
   font-weight: 100;
   text-shadow: 1px 1px 4px gray;
@@ -210,18 +265,26 @@ h3 {
   font-weight: 100;
 }
 p {
-  font-family: "Roboto";
   font-size: 20px;
 }
 
 .technologies {
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
+.technologies img {
+  width: 60px;
+}
 .icon {
   margin-right: 30px;
 }
+
+#figma {
+  width: 40px;
+}
+
 .icontag {
   visibility: hidden;
   width: 50px;
@@ -236,10 +299,24 @@ p {
   background-color: #233142a2;
 }
 
+.double {
+  margin-top: 0px !important;
+}
+
+#latextag {
+  margin-left: -40px !important;
+  margin-top: 20px !important;
+}
+#figmatag {
+  margin-top: 8px !important;
+  margin-left: -36px !important;
+}
+
 .icon:hover .icontag {
   visibility: visible;
 }
 iframe {
+  max-width: 80vw;
   margin: 5vh auto 10vh auto;
   display: block;
 }
@@ -248,22 +325,22 @@ iframe {
   margin-top: 100px;
   width: 0;
   height: 0;
-  border-top: 25vh solid #f5f5f5;
-  border-left: 97.85vw solid #233142;
+  border-top: 15vw solid #f5f5f5;
+  border-left: calc(100vw - 33px) solid #233142;
 }
 .lighttriangle2 {
-  margin-top: -130px;
+  margin-top: -10vw;
   width: 0;
   height: 0;
-  border-top: 25vh solid transparent;
-  border-left: 97.85vw solid white;
+  border-top: 15vw solid transparent;
+  border-left: calc(100vw - 33px) solid white;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
 .Contact {
   background-color: transparent;
-  height: 70vh;
+  height: 100v h;
 }
 
 .white {
@@ -279,4 +356,68 @@ iframe {
   position: absolute;
   font-size: 20px;
   color: #3d628f;
+}
+
+@media only screen and (max-width: 600px) {
+  /*phone*/
+  h2,
+  #name,
+  .AboutMe span {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  p,
+  .AboutMe p,
+  .Contact a {
+    font-size: 16px;
+  }
+
+  .bubbles,
+  .tags,
+  .info img,
+  nav {
+    visibility: hidden;
+  }
+
+  .burger-tags,
+  .burger-menu img {
+    visibility: visible;
+  }
+  .Contact a {
+    margin: 25px auto 0px 0px;
+  }
+
+  .Contact .info {
+    margin: auto 0vw auto 0vw;
+  }
+
+  .technologies img {
+    width: 30px;
+  }
+  .icon {
+    margin-right: 20px;
+  }
+  .icontag {
+    width: 50px;
+    margin-top: 10px;
+    margin-left: -40px;
+  }
+
+  #figma {
+    width: 20px;
+  }
+
+  .project a img {
+    width: 20px;
+  }
+
+  iframe {
+    width: fit-content;
+    height: fit-content;
+  }
+  .info a {
+    margin: 0 !important;
+  }
 }
