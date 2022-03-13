@@ -33,13 +33,24 @@ function activateNavigation() {
     navContainer.innerHTML = navItems.join("");
   
     const observer = new IntersectionObserver(
-      (entries) => {  
+      (entries) => {       
         const visibleSection = entries.filter((entry) => entry.isIntersecting)[0];
+
         if (visibleSection != undefined && visibleSection.target.id!="Home"){
           color(visibleSection.target.id);
           selectedDot(visibleSection.target.id);
         } else if (visibleSection != undefined && visibleSection.target.id=="Home"){
+          currentTab="Home";
           uncolor();
+        }
+
+        //temp not optimal solution
+        if (visibleSection == undefined && currentTab=="AboutMe" && entries[0].target.classList[0]!="name" && entries[0].target.classList[0]!="MyProjects"){ //getting out of AboutMe
+          color("MyProjects")
+          selectedDot("MyProjects");
+        } else if(visibleSection == undefined && currentTab=="Contact" && entries[0].target.classList[0]!="MyProjects"){ //getting out of contact
+          color("MyProjects");
+          selectedDot("MyProjects");
         }
       },
       { threshold: 0.25 }
@@ -60,7 +71,6 @@ function activateNavigation() {
     document.getElementById("Dot-AboutMe").style.backgroundColor= "transparent";
   }
 
-  //bug projects not working
   document.getElementById("Dot-MyProjects").onmouseover= function(){
     document.getElementById("Dot-MyProjects").style.backgroundColor= "transparent";
   }
@@ -96,8 +106,6 @@ function activateNavigation() {
 
 
   function color(id){
-    //bug burger menu hide when clicked on current section
-    hideMenu();
     uncolor();
     let current= "Nav-".concat(id);
    document.getElementById(current).style.color="#74a2dc";
@@ -119,7 +127,6 @@ function activateNavigation() {
    document.getElementById("Burger-MyProjects").style.color="white";
    
    document.getElementById("Burger-Contact").style.color="white";
-   hideMenu();
 
   }
 
@@ -169,4 +176,7 @@ function activateNavigation() {
   }
 
   document.getElementById("burger-menu").addEventListener("click", menu);
+  document.getElementById("burger-tags").addEventListener("click", menu);
+
+  hideMenu();
 
