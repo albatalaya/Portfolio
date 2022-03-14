@@ -1,6 +1,7 @@
 
 let currentTab;
 let visible=false;
+let mode= "light";
 
 function activateNavigation() {
     const sections = document.querySelectorAll("section");
@@ -40,7 +41,7 @@ function activateNavigation() {
           color(visibleSection.target.id);
           selectedDot(visibleSection.target.id);
         } else if (visibleSection != undefined && visibleSection.target.id=="Home"){
-          currentTab="Home";
+          selectedDot(visibleSection.target.id);
           uncolor();
         }
 
@@ -81,24 +82,40 @@ function activateNavigation() {
 
   document.getElementById("Dot-Home").onmouseout= function(){
     if(currentTab!="Home"){
-      document.getElementById("Dot-Home").style.backgroundColor= "#233142";
+      if(mode=="light"){
+        document.getElementById("Dot-Home").style.backgroundColor= "#233142";
+      } else{
+        document.getElementById("Dot-Home").style.backgroundColor= "white";
+      }
     }
   }
 
   document.getElementById("Dot-AboutMe").onmouseout= function(){
     if(currentTab!="AboutMe"){
-      document.getElementById("Dot-AboutMe").style.backgroundColor= "#233142";
+      if(mode=="light"){
+        document.getElementById("Dot-AboutMe").style.backgroundColor= "#233142";
+      } else{
+        document.getElementById("Dot-AboutMe").style.backgroundColor= "white";
+      }
     }
   }
 
   document.getElementById("Dot-MyProjects").onmouseout= function(){
     if(currentTab!="MyProjects"){
-      document.getElementById("Dot-MyProjects").style.backgroundColor= "#233142";
+      if(mode=="light"){
+        document.getElementById("Dot-MyProjects").style.backgroundColor= "#233142";
+      } else{
+        document.getElementById("Dot-MyProjects").style.backgroundColor= "white";
+      }
     }
   }
   document.getElementById("Dot-Contact").onmouseout= function(){
     if(currentTab!="Contact"){
-      document.getElementById("Dot-Contact").style.backgroundColor= "#233142";
+      if(mode=="light"){
+        document.getElementById("Dot-Contact").style.backgroundColor= "#233142";
+      } else{
+        document.getElementById("Dot-Contact").style.backgroundColor= "white";
+      }
     }
   }
 
@@ -139,19 +156,30 @@ function activateNavigation() {
   }
 
   function unselectedDot(){
+    document.getElementById("Dot-Home").style.transform= "scale(1)";
     document.getElementById("Dot-AboutMe").style.transform= "scale(1)";
-    document.getElementById("Dot-AboutMe").style.backgroundColor= "#233142";
-
     document.getElementById("Dot-MyProjects").style.transform= "scale(1)";
-    document.getElementById("Dot-MyProjects").style.backgroundColor= "#233142";
-
     document.getElementById("Dot-Contact").style.transform= "scale(1)";
-    document.getElementById("Dot-Contact").style.backgroundColor= "#233142";
+    
+    if(mode=="light"){
+      document.getElementById("Dot-Home").style.backgroundColor= "#233142";
+      document.getElementById("Dot-AboutMe").style.backgroundColor= "#233142";
+      document.getElementById("Dot-MyProjects").style.backgroundColor= "#233142";
+      document.getElementById("Dot-Contact").style.backgroundColor= "#233142";
+    } else{
+      document.getElementById("Dot-Home").style.backgroundColor= "white";
+      document.getElementById("Dot-AboutMe").style.backgroundColor= "white";
+      document.getElementById("Dot-MyProjects").style.backgroundColor= "white";
+      document.getElementById("Dot-Contact").style.backgroundColor= "white";
+    }
   }
 
   function showMenu(){
     visible=true;
     document.getElementById("burger-tags").style.visibility="visible";
+    if(mode=="night"){
+      document.getElementById("burger-light").style.visibility="visible";
+    }
     document.getElementById("Back").style.visibility="visible";
 
     var body = document.getElementById("Portfolio");
@@ -161,6 +189,7 @@ function activateNavigation() {
   function hideMenu(){
     visible=false;
     document.getElementById("burger-tags").style.visibility="hidden";
+    document.getElementById("burger-light").style.visibility="hidden";
     document.getElementById("Back").style.visibility="hidden";
 
     var body = document.getElementById("Portfolio");
@@ -175,8 +204,63 @@ function activateNavigation() {
     }
   }
 
+  function nightMode(){
+
+    document.getElementById("burger-light").style.visibility="hidden";
+
+    let text = document.getElementsByTagName('*');
+
+    for (let i=0; i < text.length; i++) {
+      text[i].style.color = "white";
+    }
+
+    document.getElementsByClassName("AboutMe")[0].style.backgroundColor="#233142";
+    document.getElementsByClassName("white")[0].style.backgroundColor="#233142";
+    document.getElementsByClassName("grey")[0].style.backgroundColor="#233142";
+
+    let triangle=document.getElementsByClassName("triangle");
+
+    for (let i=0; i < triangle.length; i++) {
+      triangle[i].style.visibility="hidden";
+    }
+
+    document.getElementById("burger-night").style.visibility="hidden";
+    document.getElementById("burger-light").style.visibility="visible";
+
+    document.getElementById("Dot-Home").style.backgroundColor= "white";
+    document.getElementById("Dot-Home").style.content= "url(./assets/Home-night.png)";
+    document.getElementById("Dot-AboutMe").style.backgroundColor= "white";
+    document.getElementById("Dot-AboutMe").style.content= "url(./assets/AboutMe-night.png)";
+    document.getElementById("Dot-MyProjects").style.backgroundColor= "white";
+    document.getElementById("Dot-MyProjects").style.content= "url(./assets/MyProjects-night.png)";
+    document.getElementById("Dot-Contact").style.backgroundColor= "white";
+    document.getElementById("Dot-Contact").style.content= "url(./assets/Contact-night.png)";
+
+    document.getElementById("burger-light").style.visibility="hidden";
+  }
+
+  function lightMode(){
+    location.reload();
+  }
+
+  function colorMode(){
+    if(mode=="light"){
+      mode="night";
+      nightMode();
+    } else{
+      mode="light";
+      lightMode();
+    }
+  }
+  
+
+
+
   document.getElementById("burger-menu").addEventListener("click", menu);
   document.getElementById("burger-tags").addEventListener("click", menu);
+
+  document.getElementById("color-mode").addEventListener("click", colorMode);
+  document.getElementById("burger-color-mode").addEventListener("click", colorMode);
 
   hideMenu();
 

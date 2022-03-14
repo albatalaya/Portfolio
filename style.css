@@ -44,6 +44,20 @@ body {
   top: 1.5vw;
   right: 4%;
   z-index: 2;
+  margin-right: 15px;
+}
+.color-mode img {
+  cursor: pointer;
+  width: 20px;
+  top: 1.4vw;
+  right: 2%;
+
+  position: fixed;
+  z-index: 4;
+}
+
+#light {
+  visibility: hidden;
 }
 
 .burger-menu img {
@@ -53,7 +67,9 @@ body {
   visibility: hidden;
   position: fixed;
   z-index: 4;
+  cursor: pointer;
 }
+
 .burger-tags {
   transition: all ease-in;
   visibility: hidden;
@@ -72,6 +88,22 @@ body {
   align-items: center;
 
   justify-content: space-around;
+}
+
+.burger-color-mode {
+  margin-bottom: 20vh;
+}
+.burger-color-mode img {
+  cursor: pointer;
+  width: 20px;
+  position: fixed;
+  z-index: 3;
+  display: block;
+  margin-left: -10px;
+}
+
+#burger-light {
+  visibility: hidden;
 }
 
 .body-background {
@@ -136,6 +168,7 @@ nav {
   position: absolute;
   background-color: #233142;
   border-radius: 50%;
+  z-index: 1;
   transition: transform 0.1s;
 }
 
@@ -230,14 +263,14 @@ nav {
   width: 0;
   height: 0;
   border-top: 15vw solid white;
-  border-right: calc(100vw - 16px) solid #233142;
+  border-right: calc(100vw - 33px) solid #233142;
 }
 .lighttriangle1 {
   margin-top: -10vw;
   width: 0;
   height: 0;
   border-top: 15vw solid transparent;
-  border-right: calc(100vw - 16px) solid #f5f5f5;
+  border-right: calc(100vw - 33px) solid #f5f5f5;
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -314,14 +347,14 @@ iframe {
   width: 0;
   height: 0;
   border-top: 15vw solid #f5f5f5;
-  border-left: calc(100vw - 16px) solid #233142;
+  border-left: calc(100vw - 33px) solid #233142;
 }
 .lighttriangle2 {
   margin-top: -10vw;
   width: 0;
   height: 0;
   border-top: 15vw solid transparent;
-  border-left: calc(100vw - 16px) solid white;
+  border-left: calc(100vw - 33px) solid white;
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -372,6 +405,7 @@ iframe {
 
   .bubbles,
   .tags,
+  .color-mode,
   .info img,
   nav {
     visibility: hidden;
