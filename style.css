@@ -2,9 +2,7 @@
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
-section {
-  /*width: calc(100vw - 33);*/
-}
+
 body {
   overflow-x: hidden;
   margin: 8px;
@@ -19,18 +17,50 @@ body {
   background-color: transparent;
   position: fixed;
   right: -1px;
-  border-right: 9px solid #233142;
+  border-right: 10px solid #233142;
   z-index: 1;
 }
-/*.languages {
+
+.selected-language {
+  cursor: pointer;
+  transition: all ease-in;
+}
+.selected-language a {
   font-family: "Cutive Mono", "Courier New", Courier, monospace, sans-serif;
-  font-size: 12px;
+  top: 1.5vw;
+  left: 25px;
+  font-size: 14px;
   position: fixed;
   color: white;
-  margin: 8px;
-  line-height: 1.5em;
+  line-height: 1em;
   z-index: 2;
-}*/
+}
+#selected:hover,
+.languages a:hover {
+  text-decoration: underline;
+}
+
+#up {
+  visibility: hidden;
+}
+
+.languages {
+  visibility: hidden;
+  background-color: rgba(35, 49, 66, 0.75);
+  padding: 10px;
+  padding-right: 20px;
+  font-family: "Cutive Mono", "Courier New", Courier, monospace, sans-serif;
+  top: 3.5vw;
+  left: 15px;
+  font-size: 14px;
+  position: fixed;
+  color: white;
+  line-height: 2em;
+  z-index: 3;
+  cursor: pointer;
+  transition: all ease-in;
+}
+
 #flag {
   background-color: #74a2dc;
   height: 20vh;
@@ -254,7 +284,7 @@ nav {
   margin-left: -10px;
 }
 
-.AboutMe p {
+#AboutMe-info {
   font-size: 20px;
   padding-right: 3vw;
   width: 46vw;
@@ -266,7 +296,7 @@ nav {
 }
 
 @media only screen and (max-width: 1150px) {
-  .AboutMe p {
+  #AboutMe-info {
     width: 100%;
   }
   .AboutMe img {
@@ -403,8 +433,7 @@ iframe {
   margin-bottom: 10px;
 }
 
-@media only screen and (max-width: 600px) {
-  /*phone*/
+@media only screen and (max-width: 620px) {
   h2,
   #name,
   .AboutMe span {
@@ -423,7 +452,9 @@ iframe {
   .tags,
   .color-mode,
   .info img,
-  nav {
+  nav,
+  .selected-language,
+  .languages {
     visibility: hidden;
   }
 

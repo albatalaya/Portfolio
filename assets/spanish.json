@@ -1,0 +1,37 @@
+{   
+    "name": "Alba talaya Vidal",
+    "language": "Spanish",
+    "tags": ["<Sobre mí>", "<Mis proyectos>", "<Contacto>", "<CV>"],
+    "aboutme": [{
+        "title": "<sobre mí>",
+        "info": "Me llamo Alba Talaya Vidal. He estudiado la carrera de Ingeniería de Telecomunicaciones con mención en Telemática, y actualmente estoy cursando un posgrado en Full-Stack Web Technologies. Soy una persona creativa, organizada y con capacidad de adaptación en diferentes entornos. Con ganas de empezar a trabajar en el campo del Desarrollo de Software."
+    }],
+    "myprojects": [{
+        "title": "<mis proyectos>",
+        "projects": [{
+            "title": "01. TRABAJO DE FIN DE GRADO - OPTICAL WARNING OF BICYCLE RIDERS CONCERNING MOTORIZED VEHICLES CLOSING FROM BEHIND USING THE SMARTPHONE'S MICROPHONE: ",
+            "info": "Aplicación móvil dirigida a ciclistas con problemas auditivos. A partir del micrófono del dispositivo móvil, se va analizando el audio en tiempo real y cuando se detecta que un vehículo motorizado que se está acercando, lo anuncia visualmente mediante unas gafas de realidad aumentada conectadas por Bluetooth.",
+            "technologies": "Tecnologías utilizadas:"
+        },
+        {
+            "title": "02. PROYECTO AVANZADO DE INGENIERÍA: ",
+            "info": "Creación de una nueva implementación para la aplicación de estudiantes UPC de IThinkUPC. Proyecto realizado en grupo de 5 personas.",
+            "technologies": "Tecnologías utilizadas:"
+        },
+        {
+            "title": "03. CURRÍCULUM: ",
+            "technologies": "Tecnologías utilizadas:"
+        },
+        {
+            "title": "04. PORTAFOLIO PERSONAL: ",
+            "technologies": "Tecnologías utilizadas:"
+        }]
+    }],
+    "contact": [{
+        "title":"<contacto>",
+        "mail": "talayaalba@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/albatalaya",
+        "github": "https://github.com/albatalaya"
+    }],
+    "credits": "Diseñado y desarrollado por"
+}

@@ -13,8 +13,7 @@
     <!--todo: animations-->
     <script type="module" src="./main.js"></script>
     <link rel="stylesheet" href="./style.css" />
-    <!--<script type="application/json" src="data.json"></script>-->
-<!--todo:languages-->
+
     <div class="absolute-border"></div>
     <div class="burger-tags" id="burger-tags">
       <a href="#AboutMe" class="navigate" id="Burger-AboutMe" style="margin-top:20vh;"> &ltAbout me></a> 
@@ -24,19 +23,26 @@
       <a class="burger-color-mode" id="burger-color-mode"> <img id="burger-night" src="./assets/moon.png"> <img id="burger-light" src="./assets/sun.png"></a>
     </div>
    
-
     <div id="flag"><a href="#Portfolio"><img src="./assets/logo.png" /></a></div>
-    <!--<div class="languages">
-      <a>&ltEnglish></a> <br />
-      <a>&ltEspañol></a> <br />
-      <a>&ltCatalà></a>
-    </div>-->
+
+    <div class="selected-language">
+      <a id="selected">en</a>
+      <img id="down" height="15px" src="./assets/down-arrow.png" style="left:53px; top: 1.5vw; position: fixed; z-index: 2;">
+      <img id="up" height="15px" src="./assets/up-arrow.png" style="left:53px; top: 1.5vw; position: fixed; z-index: 2;">
+    </div>
+      
+    <div class="languages" id="languages">  
+      <a id="en">en</a> <br>
+      <a id="es">es</a> <br>
+      <a id="cat">cat</a>
+    </div>
+    
     
     <span class="tags">
         <a href="#AboutMe" class="navigate" id="Nav-AboutMe"> &ltAbout me></a>
         <a href="#MyProjects" class="navigate" id="Nav-MyProjects"> &ltMy projects></a>
         <a href="#Contact" class="navigate" id="Nav-Contact"> &ltContact></a>
-        <a class="navigate" href="./assets/CV_English.pdf"> &ltCV></a>
+        <a class="navigate" href="./assets/CV_English.pdf" id="Nav-CV"> &ltCV></a>
     </span>
     <a class="color-mode" id="color-mode"> <img id="night" src="./assets/moon.png"> <img id="light" src="./assets/sun.png"></a>
     <a class="burger-menu" id="burger-menu">
@@ -64,13 +70,12 @@
 
 
 
-
+<!--todo: highlight-->
     <section class="AboutMe" id="AboutMe" data-label="AboutMe">
       <div class="about-flex">
-        <p>
-          <!--todo: highlight-->
-          <span>&ltAbout me></span><br />
-          <br />
+        <p id="AboutMe-info">
+          <span>&ltAbout me></span>
+          <br/> <br/>
           My name is Alba Talaya Vidal. I have studied the Bachelor’s degree of
           Telecommunications Engineering with speciality in Telematics Systems,
           and I am currently coursing a postgraduate in Full-Stack Web
@@ -97,9 +102,9 @@
     <section class="MyProjects" id="MyProjects" data-label="MyProjects">
       <div class="lighttriangle1 triangle"></div>
       <div class="grey">
-      <h2>&ltmy projects></h2>
+      <h2 id="MyProjects-title">&ltmy projects></h2>
       <div class="project">
-        <h3>
+        <h3 id="Project-title1">
           01. BACHELOR THESIS - OPTICAL WARNING OF BICYCLE RIDERS CONCERNING
           MOTORIZED VEHICLES CLOSING FROM BEHIND USING THE SMARTPHONE'S
           MICROPHONE: 
@@ -112,13 +117,13 @@
             <span class="icontag" style="width:auto; margin-top:30px; margin-left:-40px; padding:2px;">Open Github Repository</span>
           </a>
         </h3>
-        <p>
+        <p id="Project-info1">
           Mobile application for cyclists with hearing problems. The microphone
           of the mobile device is used to analyze the audio in real time, and
           when an approaching motorized vehicle is detected, it shows a visual
           warning through augmented reality glasses connected via Bluetooth.
         </p>
-        <p>Technologies I used:</p>
+        <p id="Project-technologies1">Technologies I used:</p>
         <div class="technologies">
           <span class="icon">
             <img src="./assets/vscode.png" />
@@ -174,18 +179,18 @@
 
 
       <div class="project">
-        <h3>
+        <h3 id="Project-title2">
           02. ADVANCED ENGINEERING PROJECT: 
         <a class="icon" href="https://github.com/albatalaya/PAEST-UPC-App">
           <img src="./assets/github-line.png" width="25px" style="position:absolute; margin-left:10px; margin-top:2px;"/>
           <span class="icontag" style="width:auto; margin-top:30px; margin-left:-40px; padding:2px;">Open Github Repository</span>
         </a>
         </h3>
-        <p>
+        <p id="Project-info2">
           Creation of a new implementation for the existing UPC student’s app by IThinkUPC. Project done in a group
 of 5 students.
         </p>
-        <p>Technologies I used:</p>
+        <p id="Project-technologies2">Technologies I used:</p>
         <div class="technologies">
           <span class="icon">
             <img src="./assets/vscode.png" />
@@ -225,9 +230,9 @@ of 5 students.
 
       
       <div class="project">
-        <h3>
+        <h3 id="Project-title3">
           03. RESUME: 
-        <a class="icon" href="./assets/CV_English.pdf">
+        <a class="icon" id="Project-CV-link" href="./assets/CV_English.pdf">
           <img class="openWeb" src="./assets/link.png" width="20px" style="position:absolute; margin-left:10px; margin-top:5px;"/>
           <span class="icontag" style="width:auto; margin-top:30px; margin-left:-10px; padding:2px;">Open PDF</span>
         </a> 
@@ -236,7 +241,7 @@ of 5 students.
           <span class="icontag" style="width:auto; margin-top:30px; margin-left:-40px; padding:2px;">Open Github Repository</span>
         </a>
         </h3>
-        <p>Technologies I used:</p>
+        <p id="Project-technologies3">Technologies I used:</p>
         <div class="technologies">
           <span class="icon">
             <img src="./assets/vscode.png" width="60px" />
@@ -262,18 +267,18 @@ of 5 students.
 
 
       <div class="project">
-        <h3>
+        <h3 id="Project-title4">
           04. PERSONAL PORTFOLIO: 
         <a class="icon" href="https://albatalaya.github.io/">
           <img class="openWeb" src="./assets/link.png" width="20px" style="position:absolute; margin-left:10px; margin-top:5px;"/>
           <span class="icontag" style="width:auto; margin-top:30px; margin-left:-10px; padding:2px;">Open WebPage</span>
         </a> 
-        <a class="icon" href="https://github.com/albatalaya/BachelorThesis-Frontend">
+        <a class="icon" href="https://github.com/albatalaya/albatalaya.github.io">
           <img src="./assets/github-line.png" width="25px" style="position:absolute; margin-left:10px; margin-top:2px;"/>
           <span class="icontag" style="width:auto; margin-top:30px; margin-left:-40px; padding:2px;">Open Github Repository</span>
         </a>
         </h3> 
-        <p>Technologies I used:</p>
+        <p id="Project-technologies4">Technologies I used:</p>
         <div class="technologies">
           <span class="icon">
             <img src="./assets/vscode.png" width="60px" />
@@ -321,18 +326,18 @@ of 5 students.
     <section class="Contact" id="Contact" data-label="Contact">
      <div class="lighttriangle2 triangle"></div>
       <div class="white">
-      <h2>&ltcontact></h2>
+      <h2 id="Contact-title">&ltcontact></h2>
       <div class="info">
         <img src="assets/email-line.png" height="70px;">
-        <a href="mailto: talayaalba@gmail.com"> talayaalba@gmail.com</a> <br>
+        <a id="Contact-mail" href="mailto: talayaalba@gmail.com"> talayaalba@gmail.com</a> <br>
         <img src="assets/linkedin-line.png" height="50px;" style="margin-top: 20px;margin-left: 8px; margin-right:10px;" >
-        <a href="https://www.linkedin.com/in/albatalaya/" style="margin-top:30px;"> https://www.linkedin.com/in/albatalaya</a> <br>
+        <a id="Contact-linkedin" href="https://www.linkedin.com/in/albatalaya/" style="margin-top:30px;"> https://www.linkedin.com/in/albatalaya</a> <br>
         <img src="assets/github-lines.png" height="70px;" style="margin-top: 20px;margin-left: -2px;">
-        <a href="https://github.com/albatalaya" style="margin-top:40px;"> https://github.com/albatalaya</a>
+        <a id="Contact-github" href="https://github.com/albatalaya" style="margin-top:40px;"> https://github.com/albatalaya</a>
       </div>
     </div>
      <div class="darktriangle1 triangle" style="margin-top:-50px"></div>
     </section>
-    <div id="credits">Designed and developed <br> by Alba Talaya Vidal</div>
+    <div id="credits">Designed and developed by<br> Alba Talaya Vidal</div>
   </body>
 </html>

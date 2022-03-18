@@ -1,0 +1,37 @@
+{   
+    "name": "Alba talaya Vidal",
+    "language": "English",
+    "tags": ["<About Me>", "<My Projects>", "<Contact>", "<CV>"],
+    "aboutme": [{
+        "title": "<About me>",
+        "info": " My name is Alba Talaya Vidal. I have studied the Bachelor’s degree of Telecommunications Engineering with speciality in Telematics Systems, and I am currently coursing a postgraduate in Full-Stack Web Technologies. I am a creative person, organized and with the capacity to adapt in different environments. Eager to start working on the field of Software Development. Based in Barcelona."
+    }],
+    "myprojects": [{
+        "title": "<my projects>",
+        "projects": [{
+            "title": "01. BACHELOR THESIS - OPTICAL WARNING OF BICYCLE RIDERS CONCERNING MOTORIZED VEHICLES CLOSING FROM BEHIND USING THE SMARTPHONE'S MICROPHONE: ",
+            "info": "Mobile application for cyclists with hearing problems. The microphone of the mobile device is used to analyze the audio in real time, and when an approaching motorized vehicle is detected, it shows a visual warning through augmented reality glasses connected via Bluetooth.",
+            "technologies": "Technologies I used:"
+        },
+        {
+            "title": "02. ADVANCED ENGINEERING PROJECT:",
+            "info": "Creation of a new implementation for the existing UPC student’s app by IThinkUPC. Project done in a group of 5 students.",
+            "technologies": "Technologies I used:"
+        },
+        {
+            "title": "03. RESUME:",
+            "technologies": "Technologies I used:"
+        },
+        {
+            "title": "04. PERSONAL PORTFOLIO: ",
+            "technologies": "Technologies I used:"
+        }]
+    }],
+    "contact": [{
+        "title":"<contact>",
+        "mail": "talayaalba@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/albatalaya",
+        "github": "https://github.com/albatalaya"
+    }],
+    "credits": "Designed and developed by"
+}

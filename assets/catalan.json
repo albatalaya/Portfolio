@@ -1,0 +1,37 @@
+{   
+    "name": "Alba talaya Vidal",
+    "language": "Catalan",
+    "tags": ["<Sobre mi>", "<Projectes>", "<Contacte>", "<CV>"],
+    "aboutme": [{
+        "title": "<sobre mi>",
+        "info": "Em dic Alba Talaya Vidal. He estudiat la carrera d'Enginyeria de Telecomunicacions amb menció en Sistemes Telemàtics i actualment estic cursant un postgrau en Full-Stack Web Technologies. Sóc una persona creativa, organitzada i amb capacitat d'adaptació en diferents entorns. Amb ganes de començar a treballar al camp del Desenvolupament de Software."
+    }],
+    "myprojects": [{
+        "title": "<projectes>",
+        "projects": [{
+            "title": "01. TREBALL DE FI DE GRAU - OPTICAL WARNING OF BICYCLE RIDERS CONCERNING MOTORIZED VEHICLES CLOSING FROM BEHIND USING THE SMARTPHONE'S MICROPHONE: ",
+            "info": "Aplicació mòbil dirigida a ciclistes amb problemes auditius. A partir del micròfon del dispositiu mòbil, es va analitzant l'àudio a temps real i quan es detecta que un vehicle motoritzat s'està apropant, ho anuncia visualment mitjançant unes ulleres de realitat augmentada connectades per Bluetooth.",
+            "technologies": "Tecnologies utilitzades:"
+        },
+        {
+            "title": "02. PROJECTE AVANÇAT D'ENGINYERIA: ",
+            "info": "Creació d'una nova implementació per l'aplicació d'estudiants UPC d'IThinkUPC. Projecte realitzat en grup de 5 persones.",
+            "technologies": "Tecnologies utilitzades:"
+        },
+        {
+            "title": "03. CURRÍCULUM: ",
+            "technologies": "Tecnologies utilitzades:"
+        },
+        {
+            "title": "04. PORTAFOLI PERSONAL: ",
+            "technologies": "Tecnologies utilitzades:"
+        }]
+    }],
+    "contact": [{
+        "title":"<contacto>",
+        "mail": "talayaalba@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/albatalaya",
+        "github": "https://github.com/albatalaya"
+    }],
+    "credits": "Dissenyat i desenvolupat per"
+}
