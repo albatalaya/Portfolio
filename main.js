@@ -3,6 +3,10 @@ import es from './assets/spanish.json' assert { type: 'json' };
 import cat from './assets/catalan.json' assert { type: 'json' };
 
 
+//SPLASH SCREEN
+setTimeout(()=> {document.getElementById("splash").style.visibility="hidden"}, 1050); 
+
+
 //VARIABLES
 let currentTab;
 let visible=false;
@@ -14,13 +18,13 @@ let lanVisible=false;
 let currentLan = localStorage.getItem("language");
 switch(currentLan){
   case "en":
-    setTimeout(() => { english();}, 10); //timeout set to avoid a bug in selected language color
+    setTimeout(english, 10); //timeout set to avoid a bug in selected language color
     break;
   case "es":
-    setTimeout(() => { spanish();}, 10);
+    setTimeout(spanish, 10);
     break;
   case "cat":
-    setTimeout(() => { catalan(); }, 10);
+    setTimeout(catalan, 10);
     break;
 }
 

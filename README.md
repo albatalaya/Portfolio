@@ -15,7 +15,7 @@ https://albatalaya.github.io/
 
 - [x] Night Mode
 - [x] Multi Language
+- [x] Splash Screen
 - [ ] Animations
-- [ ] Splash Screen
 
 2022, Barcelona
