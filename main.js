@@ -4,17 +4,19 @@ import cat from './assets/catalan.json' assert { type: 'json' };
 
 
 //SPLASH SCREEN
-setTimeout(()=> {document.getElementById("splash").style.visibility="hidden"}, 1050); 
+setTimeout(()=> {
+  document.getElementById("splash").style.visibility="hidden"
+}, 1050); 
 
 
 //VARIABLES
 let currentTab;
 let visible=false;
-let mode= "light";
 let lanVisible=false;
+let screen = window.matchMedia("(max-width: 620px)")
 
 
-//SET PREVIOUS LANGUAGE IF THE PAGE WAS RELOADED
+//SET PREVIOUS LANGUAGE IF THE PAGE WAS RELOADED AND COLOR MODE
 let currentLan = localStorage.getItem("language");
 switch(currentLan){
   case "en":
@@ -25,6 +27,16 @@ switch(currentLan){
     break;
   case "cat":
     setTimeout(catalan, 10);
+    break;
+}
+
+let mode = localStorage.getItem("color");
+switch(mode){
+  case "light":
+    lightMode();
+    break;
+  case "night":
+    nightMode();
     break;
 }
 
@@ -48,9 +60,32 @@ activateNavigation();
 hideMenu();
 dots();
 
+hideTags(screen);
+screen.addEventListener("change", hideTags);
 
 
 //FUNCTIONS
+function hideTags(size) {
+  let icon;
+  switch(mode){
+    case "light":
+      icon="night";
+      break;
+    case "night":
+      icon="light";
+      break;
+  }
+  if (size.matches) { // If media query matches
+    document.getElementById(icon).style.visibility="hidden";
+    document.getElementById("down").style.visibility="hidden";
+  } else {
+    document.getElementById(icon).style.visibility="visible";
+    document.getElementById("down").style.visibility="visible";
+  }
+}
+
+
+
 function activateNavigation() {
     const sections = document.querySelectorAll("section");
     const navContainer = document.createElement("nav");
@@ -182,6 +217,10 @@ function activateNavigation() {
     document.getElementById("burger-tags").style.visibility="visible";
     if(mode=="night"){
       document.getElementById("burger-light").style.visibility="visible";
+      document.getElementById("burger-night").style.visibility="hidden";
+    } else {
+      document.getElementById("burger-night").style.visibility="visible";
+      document.getElementById("burger-light").style.visibility="hidden";
     }
     document.getElementById("Back").style.visibility="visible";
 
@@ -216,13 +255,12 @@ function activateNavigation() {
   function nightMode(){
     //change colors to match night mode
 
-    let text = document.getElementsByTagName('*');
+    let text = document.getElementsByClassName('black');
 
     for (let i=0; i < text.length; i++) {
       text[i].style.color = "white";
     }
 
-    document.getElementById(currentLan).style.color="#74a2dc";
 
     document.getElementsByClassName("AboutMe")[0].style.backgroundColor="#233142";
     document.getElementsByClassName("white")[0].style.backgroundColor="#233142";
@@ -236,7 +274,7 @@ function activateNavigation() {
 
     if(visible){
       document.getElementById("burger-night").style.visibility="hidden";
-      document.getElementById("burger-light").style.visibility="visible";
+      document.getElementById("burger-light").style.visibility="hidden";
     }else{
       document.getElementById("night").style.visibility="hidden";
       document.getElementById("light").style.visibility="visible";
@@ -249,13 +287,52 @@ function activateNavigation() {
       dots[i].style.backgroundColor= "white";
       dots[i].style.content= url[i];
     }
-
-    selectedDot(currentTab);
+    if(currentTab!=null){
+      selectedDot(currentTab);
+    }
+    
     
   }
 
   function lightMode(){
-    location.reload();
+    //change colors to match night mode
+
+    let text = document.getElementsByClassName('black');
+
+    for (let i=0; i < text.length; i++) {
+      text[i].style.color = "black";
+    }
+
+    document.getElementsByClassName("AboutMe")[0].style.backgroundColor="white";
+    document.getElementsByClassName("white")[0].style.backgroundColor="white";
+    document.getElementsByClassName("grey")[0].style.backgroundColor="#f5f5f5";
+
+    let triangle=document.getElementsByClassName("triangle");
+
+    for (let i=0; i < triangle.length; i++) {
+      triangle[i].style.visibility="visible";
+    }
+
+    if(visible){
+      document.getElementById("burger-light").style.visibility="hidden";
+      document.getElementById("burger-night").style.visibility="hidden";
+    }else{
+      document.getElementById("light").style.visibility="hidden";
+      document.getElementById("night").style.visibility="visible";
+    }
+    
+
+    let url=["url(./assets/Home.png)", "url(./assets/AboutMe.png)", "url(./assets/MyProjects.png)", "url(./assets/Contact.png)"];
+    let dots = document.getElementsByClassName("dot-img");
+    for(let i=0; i<dots.length; i++){
+      dots[i].style.backgroundColor= "#233142";
+      dots[i].style.content= url[i];
+    }
+
+    if(currentTab!=null){
+      selectedDot(currentTab);
+    }
+
   }
 
   function colorMode(){
@@ -266,6 +343,7 @@ function activateNavigation() {
       mode="light";
       lightMode();
     }
+    localStorage.setItem("color", mode);
   }
 
 
