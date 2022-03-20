@@ -30,7 +30,8 @@ switch(currentLan){
     break;
 }
 
-let mode = localStorage.getItem("color");
+let mode= "light"; //it there is no previous mode saved, it will stay like this 
+mode = localStorage.getItem("color");
 switch(mode){
   case "light":
     lightMode();
