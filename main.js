@@ -237,6 +237,7 @@ function activateNavigation() {
     visible=false;
     document.getElementById("burger-tags").style.visibility="hidden";
     document.getElementById("burger-light").style.visibility="hidden";
+    document.getElementById("burger-night").style.visibility="hidden";
     document.getElementById("Back").style.visibility="hidden";
     document.getElementById("languages").style.visibility="hidden";
 
