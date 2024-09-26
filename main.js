@@ -1,7 +1,6 @@
-import en from "./assets/english.json";
-import es from "./assets/spanish.json";
-import cat from "./assets/catalan.json";
-
+import en from "./assets/english.json" with { type: "json" };
+import es from "./assets/spanish.json" with { type: "json" };
+import cat from "./assets/catalan.json" with { type: "json" };
 
 //SPLASH SCREEN
 setTimeout(()=> {
