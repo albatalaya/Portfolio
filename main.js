@@ -1,6 +1,6 @@
-import en from './assets/english.json' assert { type: 'json' };
-import es from './assets/spanish.json' assert { type: 'json' };
-import cat from './assets/catalan.json' assert { type: 'json' };
+import en from "./assets/english.json";
+import es from "./assets/spanish.json";
+import cat from "./assets/catalan.json";
 
 
 //SPLASH SCREEN
